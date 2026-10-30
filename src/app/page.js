@@ -4,7 +4,9 @@ import Contact from "./components/Contact";
 import BlogSection from "./components/BlogSection";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
+import StatsBar from "./components/StatsBar";
 import HowWeDoIt from "./components/HowWeDoIt";
+import CostEstimator from "./components/CostEstimator";
 import Navbar from "./components/navbar";
 import Reviews from "./components/Reviews";
 import Services from "./components/Services";
@@ -33,7 +35,7 @@ export default function Home() {
       {
         "@type": "WebSite",
         name: BRAND_NAME,
-        description: "Interior and exterior painting, wall textures, waterproofing, and wood and metal finishes for homes and businesses in Gurgaon and Gurugram.",
+        description: "Top-rated painting services in Noida near me. Interior, exterior, texture painting, and waterproofing for residential societies and commercial properties.",
         ...(siteUrl
           ? { url: siteUrl }
           : {}),
@@ -59,10 +61,10 @@ export default function Home() {
         "@type": "Service",
         name,
         serviceType: name,
-        description: `${name} for residential and commercial properties in Gurgaon and Gurugram. Scope and recommendations are confirmed after discussing the site and surfaces.`,
+        description: `${name} for residential and commercial properties in Noida and Greater Noida. Scope and recommendations are confirmed after discussing the site and surfaces.`,
         areaServed: [
-          { "@type": "City", name: "Gurgaon" },
-          { "@type": "City", name: "Gurugram" },
+          { "@type": "City", name: "Noida" },
+          { "@type": "City", name: "Greater Noida" },
         ],
         provider: {
           "@type": "Organization",
@@ -83,9 +85,11 @@ export default function Home() {
       />
       <Navbar />
       <Hero />
-      <Services />
+      <StatsBar />
       <Features />
+      <Services />
       <HowWeDoIt />
+      <CostEstimator />
       <VisualizeRoomColor />
       <Reviews />
       <BlogSection />

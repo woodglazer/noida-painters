@@ -1,11 +1,12 @@
 "use client";
 
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, Phone } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { services } from "../services/services";
 import { BRAND_NAME } from "../seo";
+import { BUSINESS_PHONE, BUSINESS_PHONE_HREF } from "@/lib/business-contact";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -20,152 +21,165 @@ export default function Navbar() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
-      <nav
-        aria-label="Main navigation"
-        className="relative mx-auto flex max-w-6xl items-center justify-between gap-2 rounded-full border border-slate-200 bg-white/95 px-3 py-2 shadow-[0_10px_30px_rgba(15,23,42,0.12)] backdrop-blur-md sm:gap-4 sm:px-5 sm:py-2.5 lg:px-7"
-      >
-        {/* Logo */}
+    <header className="fixed inset-x-0 top-0 z-50 w-full border-b border-slate-200 bg-white backdrop-blur-md">
+      {/* Main Full-Width Header Bar */}
+      <nav aria-label="Main navigation" className="mx-auto flex max-w-8xl items-center justify-between px-4 py-2.5 sm:px-8 sm:py-3.5 lg:px-12">
+        {/* Brand Logo */}
         <Link
           href="/"
-          className="flex shrink-0 items-center px-1 py-1 sm:px-2"
+          className="flex shrink-0 items-center"
           aria-label={`${BRAND_NAME} - Home`}
         >
           <Image
-            src="/gurgaon-painters-logo-transparent.png"
+            src="/noida-logo-transparent.png"
             alt={`${BRAND_NAME} logo`}
-            width={180}
-            height={64}
-            sizes="(min-width: 1024px) 144px, (min-width: 640px) 120px, 88px"
+            width={220}
+            height={75}
             priority
-            className="h-8 w-[5.5rem] object-contain sm:h-9 sm:w-[7.5rem] lg:h-10 lg:w-36"
+            className="h-10 w-auto object-contain sm:h-14"
           />
         </Link>
 
-        {/* Desktop nav links */}
-        <div className="hidden items-center gap-5 text-sm font-semibold text-[#0B1F4D] lg:flex xl:gap-8">
+        {/* Desktop Navigation Links */}
+        <div className="hidden items-center gap-7 text-sm font-semibold text-[#0B1F4D] lg:flex xl:gap-9">
+          {/* Services Dropdown */}
           <div className="group relative">
             <Link
               href="/services"
-              className="inline-flex items-center gap-1 py-1 transition-colors hover:text-[#c2410c] focus-visible:text-[#c2410c]"
+              className="inline-flex items-center gap-1.5 py-2 transition-colors hover:text-[#022b5c] focus-visible:text-[#022b5c]"
             >
-              Services <ChevronDown size={15} aria-hidden="true" />
+              <span>Services</span>
+              <ChevronDown size={15} className="transition-transform group-hover:rotate-180" aria-hidden="true" />
             </Link>
-            <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-              <div className="rounded-2xl border border-slate-200 bg-white p-2 shadow-[0_16px_40px_rgba(15,23,42,0.16)]">
+            
+            <div className="invisible absolute left-0 top-full z-50 w-72 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <div className="rounded-xl border border-slate-200 bg-white p-2 shadow-xl shadow-slate-900/10">
                 {services.map((service) => (
                   <Link
                     key={service.slug}
                     href={`/services/${service.slug}`}
-                    className="block rounded-xl px-4 py-3 text-sm font-medium text-[#29251f] transition-colors hover:bg-[#f9f9f7] hover:text-[#c2410c]"
+                    className="block rounded-lg px-3.5 py-2.5 text-sm font-medium text-[#334155] transition-colors hover:bg-slate-50 hover:text-[#022b5c]"
                   >
                     {service.shortTitle}
                   </Link>
                 ))}
-                <Link href="/services" className="mt-1 block border-t border-slate-100 px-4 py-3 text-xs font-bold uppercase tracking-wide text-[#c2410c] hover:text-[#9a3412]">
-                  All services →
+                <Link
+                  href="/services"
+                  className="mt-1 flex items-center justify-between border-t border-slate-100 px-3.5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#022b5c] hover:text-[#011d3f]"
+                >
+                  <span>All Services</span>
+                  <span>→</span>
                 </Link>
               </div>
             </div>
           </div>
+
           {navItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="relative py-1 transition-colors hover:text-[#c2410c] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#c2410c] after:transition-all after:duration-300 hover:after:w-full"
+              className="relative py-2 transition-colors hover:text-[#022b5c] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#022b5c] after:transition-all after:duration-200 hover:after:w-full"
             >
               {item.label}
             </Link>
           ))}
         </div>
 
-        {/* CTA + hamburger */}
+        {/* Right Action: Direct Phone Dial & Mobile Toggle */}
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          {/* Desktop/Tablet Call Button (No Border, Clean Flat Style) */}
           <a
-            href="tel:+919717256514"
-            className="hidden min-h-10 items-center justify-center rounded-full bg-[#c2410c] px-4 text-xs font-bold text-white transition-all duration-200 hover:bg-[#9a3412] hover:-translate-y-px focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2410c] sm:inline-flex sm:px-5 sm:text-sm"
+            href={BUSINESS_PHONE_HREF}
+            className="hidden sm:inline-flex items-center gap-2 rounded-xl bg-transparent px-2.5 py-1.5 text-sm font-bold text-[#022b5c] transition-colors hover:text-[#011d3f]"
           >
-            +91 97172 56514
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#022b5c]/10 text-[#022b5c]">
+              <Phone size={14} />
+            </div>
+            <span>{BUSINESS_PHONE}</span>
           </a>
 
+          {/* Mobile hamburger button */}
           <button
             type="button"
-            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[#0B1F4D] transition-colors hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2410c] lg:hidden"
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-[#0f172a] transition-colors hover:bg-slate-100 lg:hidden"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
-            aria-controls="mobile-navigation"
             onClick={() => setIsOpen((open) => !open)}
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
+      </nav>
 
-        {/* Mobile dropdown */}
-        {isOpen && (
-          <div
-            id="mobile-navigation"
-            className="absolute left-0 right-0 top-[calc(100%+0.5rem)] rounded-2xl border border-slate-200 bg-white p-3 shadow-[0_16px_40px_rgba(15,23,42,0.16)] lg:hidden"
-            style={{ animation: "menuSlideDown 0.22s ease-out" }}
-          >
-            <div className="flex flex-col">
-              <div>
-                <div className="flex min-h-12 items-center rounded-xl transition-colors hover:bg-slate-50">
-                  <Link
-                    href="/services"
-                    className="flex min-h-12 flex-1 items-center rounded-xl px-4 text-base font-medium text-[#0B1F4D] hover:text-[#c2410c]"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Services
-                  </Link>
-                  <button
-                    type="button"
-                    aria-label={isServicesOpen ? "Hide service links" : "Show service links"}
-                    aria-expanded={isServicesOpen}
-                    className="mr-2 flex h-9 w-9 items-center justify-center rounded-full text-[#0B1F4D] hover:bg-white hover:text-[#c2410c]"
-                    onClick={() => setIsServicesOpen((open) => !open)}
-                  >
-                    <ChevronDown size={18} className={`transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
-                  </button>
-                </div>
-                {isServicesOpen && (
-                  <div className="ml-4 border-l border-[#c2410c]/20 pl-2">
-                    {services.map((service) => (
-                      <Link
-                        key={service.slug}
-                        href={`/services/${service.slug}`}
-                        className="flex min-h-11 items-center rounded-lg px-4 text-sm text-[#514b41] transition-colors hover:bg-slate-50 hover:text-[#c2410c]"
-                        onClick={() => {
-                          setIsOpen(false);
-                          setIsServicesOpen(false);
-                        }}
-                      >
-                        {service.shortTitle}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-              {navItems.map((item) => (
+      {/* Mobile Drawer Menu */}
+      {isOpen && (
+        <div
+          id="mobile-navigation"
+          className="border-t border-slate-200 bg-white px-5 py-4 shadow-xl lg:hidden"
+        >
+          <div className="flex flex-col space-y-1">
+            {/* Mobile Services toggle */}
+            <div>
+              <div className="flex min-h-11 items-center justify-between rounded-lg px-3 py-2 text-base font-semibold text-[#0f172a] hover:bg-slate-50">
                 <Link
-                  key={item.label}
-                  href={item.href}
-                  className="flex min-h-12 items-center rounded-xl px-4 text-base font-medium text-[#0B1F4D] transition-colors hover:bg-slate-50 hover:text-[#c2410c]"
+                  href="/services"
+                  className="flex-1"
                   onClick={() => setIsOpen(false)}
                 >
-                  {item.label}
+                  Services
                 </Link>
-              ))}
+                <button
+                  type="button"
+                  aria-label={isServicesOpen ? "Hide services" : "Show services"}
+                  className="p-1 text-[#64748b]"
+                  onClick={() => setIsServicesOpen((open) => !open)}
+                >
+                  <ChevronDown size={18} className={`transition-transform ${isServicesOpen ? "rotate-180" : ""}`} />
+                </button>
+              </div>
+
+              {isServicesOpen && (
+                <div className="ml-3 my-1 space-y-1 border-l-2 border-[#022b5c]/30 pl-3">
+                  {services.map((service) => (
+                    <Link
+                      key={service.slug}
+                      href={`/services/${service.slug}`}
+                      className="block py-2 text-sm text-[#475569] hover:text-[#022b5c]"
+                      onClick={() => {
+                        setIsOpen(false);
+                        setIsServicesOpen(false);
+                      }}
+                    >
+                      {service.shortTitle}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
-            <a
-              href="tel:+919717256514"
-              className="mt-2 flex min-h-12 items-center justify-center rounded-full bg-[#c2410c] px-5 text-sm font-bold text-white transition-colors hover:bg-[#9a3412]"
-              onClick={() => setIsOpen(false)}
-            >
-              Call: +91 97172 56514
-            </a>
+
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="block rounded-lg px-3 py-2.5 text-base font-semibold text-[#0f172a] hover:bg-slate-50 hover:text-[#022b5c]"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+
+            <div className="pt-4 border-t border-slate-100 flex flex-col gap-2">
+              <a
+                href={BUSINESS_PHONE_HREF}
+                className="flex items-center justify-center gap-2 rounded-lg bg-[#022b5c] py-2.5 text-sm font-semibold text-white"
+              >
+                <Phone size={16} />
+                <span>Call {BUSINESS_PHONE}</span>
+              </a>
+            </div>
           </div>
-        )}
-      </nav>
+        </div>
+      )}
     </header>
   );
 }

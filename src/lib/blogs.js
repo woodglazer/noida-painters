@@ -7,18 +7,18 @@ const fallbackArticles = [
     slug: "choose-paint-finish-for-each-room",
     category: "Interior planning",
     title: "How to choose the right paint finish for each room",
-    seoTitle: "Choosing Paint Finishes in Gurgaon | Gurgaon Painters",
+    seoTitle: "Choosing Paint Finishes in Noida | Noida Painters",
     description:
       "Choose a paint finish by balancing how a room is used, wall condition, appearance, and the product's care instructions.",
     body: `Paint finish affects how a wall reflects light and how visible small surface marks may be. Before choosing a sheen, consider how the room is used, the wall's condition, and the finish recommended for the paint product. There is no single finish that is right for every room.
 
 For bedrooms and quieter spaces, many homeowners prefer a softer, less reflective look. Busy areas may need a finish that the manufacturer identifies as more washable. Kitchens, bathrooms, and utility areas also need product choices suitable for their moisture and cleaning conditions; paint alone does not solve leaks or persistent damp.
 
-In Gurgaon homes, daylight, warm artificial lighting, and room orientation can make the same shade look different. Test a sample on the actual wall and view it at different times of day before confirming the colour. Ask your painter to assess unevenness, old coatings, cracks, or repairs, since surface preparation can affect the final appearance.`,
+In Noida homes, daylight, warm artificial lighting, and room orientation can make the same shade look different. Test a sample on the actual wall and view it at different times of day before confirming the colour. Ask your painter to assess unevenness, old coatings, cracks, or repairs, since surface preparation can affect the final appearance.`,
     paragraphs: [
       "Paint finish affects how a wall reflects light and how visible small surface marks may be. Before choosing a sheen, consider how the room is used, the wall's condition, and the finish recommended for the paint product. There is no single finish that is right for every room.",
       "For bedrooms and quieter spaces, many homeowners prefer a softer, less reflective look. Busy areas may need a finish that the manufacturer identifies as more washable. Kitchens, bathrooms, and utility areas also need product choices suitable for their moisture and cleaning conditions; paint alone does not solve leaks or persistent damp.",
-      "In Gurgaon homes, daylight, warm artificial lighting, and room orientation can make the same shade look different. Test a sample on the actual wall and view it at different times of day before confirming the colour. Ask your painter to assess unevenness, old coatings, cracks, or repairs, since surface preparation can affect the final appearance.",
+      "In Noida homes, daylight, warm artificial lighting, and room orientation can make the same shade look different. Test a sample on the actual wall and view it at different times of day before confirming the colour. Ask your painter to assess unevenness, old coatings, cracks, or repairs, since surface preparation can affect the final appearance.",
     ],
     checks: [
       "Decide how often the wall will be touched or cleaned.",
@@ -34,21 +34,21 @@ In Gurgaon homes, daylight, warm artificial lighting, and room orientation can m
   },
   {
     id: "fallback-exterior-repainting",
-    slug: "exterior-house-repainting-checklist-gurgaon",
+    slug: "exterior-house-repainting-checklist-noida",
     category: "Exterior painting",
     title: "What to check before repainting your home's exterior",
-    seoTitle: "Exterior Repainting Checklist for Gurgaon | Gurgaon Painters",
+    seoTitle: "Exterior Repainting Checklist for Noida | Noida Painters",
     description:
       "Inspect the existing coating and resolve surface or moisture problems before selecting an exterior paint system.",
     body: `A good exterior repaint starts with an inspection, not just a new colour. Look for peeling or blistering paint, powdery or chalky patches, cracks, flaking plaster, and stains that return after rain. These signs can have different causes, so identify the affected areas before covering them.
 
 Ask what preparation is included in the quote: cleaning, removal of loose paint, crack or plaster repairs, primer, number of coats, and protection of nearby fixtures. The exact scope depends on the condition of the facade. Any recurring damp should be investigated and addressed at its source before repainting that area.
 
-Gurgaon's heat, dust, monsoon rain, and sun exposure can affect when exterior work is practical. The surface needs to be suitable and dry for the selected product, and its instructions should guide application conditions. Ask the contractor to explain the proposed materials and sequence for your property rather than relying on a generic promise of durability.`,
+Noida's heat, dust, monsoon rain, and sun exposure can affect when exterior work is practical. The surface needs to be suitable and dry for the selected product, and its instructions should guide application conditions. Ask the contractor to explain the proposed materials and sequence for your property rather than relying on a generic promise of durability.`,
     paragraphs: [
       "A good exterior repaint starts with an inspection, not just a new colour. Look for peeling or blistering paint, powdery or chalky patches, cracks, flaking plaster, and stains that return after rain. These signs can have different causes, so identify the affected areas before covering them.",
       "Ask what preparation is included in the quote: cleaning, removal of loose paint, crack or plaster repairs, primer, number of coats, and protection of nearby fixtures. The exact scope depends on the condition of the facade. Any recurring damp should be investigated and addressed at its source before repainting that area.",
-      "Gurgaon's heat, dust, monsoon rain, and sun exposure can affect when exterior work is practical. The surface needs to be suitable and dry for the selected product, and its instructions should guide application conditions. Ask the contractor to explain the proposed materials and sequence for your property rather than relying on a generic promise of durability.",
+      "Noida's heat, dust, monsoon rain, and sun exposure can affect when exterior work is practical. The surface needs to be suitable and dry for the selected product, and its instructions should guide application conditions. Ask the contractor to explain the proposed materials and sequence for your property rather than relying on a generic promise of durability.",
     ],
     checks: [
       "Walk around the facade and note cracks, peeling, and damp marks.",
@@ -64,10 +64,10 @@ Gurgaon's heat, dust, monsoon rain, and sun exposure can affect when exterior wo
   },
   {
     id: "fallback-wall-waterproofing",
-    slug: "early-signs-wall-waterproofing-gurgaon",
+    slug: "early-signs-wall-waterproofing-noida",
     category: "Damp & waterproofing",
     title: "Early signs that a wall may need waterproofing",
-    seoTitle: "Signs of Wall Damp in Gurgaon | Gurgaon Painters",
+    seoTitle: "Signs of Wall Damp in Noida | Noida Painters",
     description:
       "Recurring damp marks and peeling paint may signal moisture; find the source before repainting the wall.",
     body: `Watch for damp patches that return, paint that bubbles or peels, powdery white deposits, dark spotting, a persistent musty smell, or plaster that feels soft. These signs can be related to moisture, but they do not identify its source by themselves.

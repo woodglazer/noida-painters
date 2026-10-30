@@ -126,7 +126,7 @@ function getInitials(name) {
 function ReviewCard({ review }) {
   return (
     <article className="flex w-[320px] max-w-[84vw] shrink-0 snap-start flex-col rounded-md bg-[#f9f9f7] p-5 sm:w-[340px] sm:p-6">
-      <span aria-hidden="true" className="text-4xl font-semibold leading-none text-[#c2410c]">
+      <span aria-hidden="true" className="text-4xl font-semibold leading-none text-[#022b5c]">
         &ldquo;
       </span>
       <blockquote className="mt-2 line-clamp-5 flex-1 text-sm leading-6 text-[#514b41]">
@@ -136,14 +136,14 @@ function ReviewCard({ review }) {
         href="https://share.google/e5zg9apyc1FExKnVK"
         target="_blank"
         rel="noreferrer"
-        className="mt-2 self-start text-xs font-semibold text-[#c2410c] hover:text-[#9a3412]"
+        className="mt-2 self-start text-xs font-semibold text-[#022b5c] hover:text-[#011d3f]"
       >
         Read full review
       </a>
       <footer className="mt-4 flex items-center gap-3 border-t border-[#e7e2d9] pt-4">
         <span
           aria-hidden="true"
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#c2410c] text-xs font-bold text-white"
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#022b5c] text-xs font-bold text-white"
         >
           {getInitials(review.name)}
         </span>
@@ -238,26 +238,23 @@ export default function Reviews() {
   return (
     <section
       id="reviews"
-      className="bg-white px-5 py-6 sm:px-8 sm:py-8 lg:px-12 lg:py-10"
+      className="bg-[#f4f2ee] py-14 sm:py-18 lg:py-20 border-b border-stone-300/80"
       aria-labelledby="reviews-heading"
     >
-      <div className="mx-auto max-w-6xl">
-        <header className="mx-auto mb-6 flex max-w-3xl flex-col items-center text-center sm:mb-8">
-          <p className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#29251f]">
-            <span className="h-px w-8 bg-[#c2410c]" />
-            Customer reviews
-            <span className="h-px w-8 bg-[#c2410c]" />
+      <div className="mx-auto max-w-8xl px-5 sm:px-8 lg:px-12">
+        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
+          <p className="mb-3 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#022b5c]">
+            <span className="h-px w-8 bg-[#022b5c]" />
+            Testimonials
+            <span className="h-px w-8 bg-[#022b5c]" />
           </p>
-          <h2
-            id="reviews-heading"
-            className="text-4xl font-medium leading-tight tracking-[-0.045em] text-[#29251f] sm:text-5xl lg:text-6xl"
-          >
-            What our customers say
+          <h2 id="reviews-heading" className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            What Our Customers Say
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-[#69645b] sm:text-base sm:leading-7">
-            Feedback from Home Glazer customers. Individual reviews may describe projects outside Gurgaon.
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
+            Verified feedback from homeowners and clients across Noida, Greater Noida, and NCR.
           </p>
-        </header>
+        </div>
 
           <div className="mb-3 flex justify-end gap-2">
           <button
@@ -265,7 +262,7 @@ export default function Reviews() {
             onClick={toggleAutoScroll}
             aria-pressed={isPaused}
             disabled={prefersReducedMotion}
-            className="mr-auto rounded-full border border-[#29251f]/15 px-4 text-sm font-semibold text-[#29251f] transition-colors hover:border-[#c2410c] hover:text-[#c2410c] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2410c]"
+            className="mr-auto rounded-full border border-[#29251f]/15 px-4 text-sm font-semibold text-[#29251f] transition-colors hover:border-[#022b5c] hover:text-[#022b5c] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#022b5c]"
           >
             {prefersReducedMotion
               ? "Paused for reduced motion"
@@ -277,7 +274,7 @@ export default function Reviews() {
             type="button"
             onClick={() => scrollReviews(-1)}
             aria-label="Scroll to previous reviews"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#29251f]/15 text-[#29251f] transition-colors hover:border-[#c2410c] hover:text-[#c2410c] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2410c]"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#29251f]/15 text-[#29251f] transition-colors hover:border-[#022b5c] hover:text-[#022b5c] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#022b5c]"
           >
             <ChevronLeft size={20} aria-hidden="true" />
           </button>
@@ -285,7 +282,7 @@ export default function Reviews() {
             type="button"
             onClick={() => scrollReviews(1)}
             aria-label="Scroll to next reviews"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#29251f]/15 text-[#29251f] transition-colors hover:border-[#c2410c] hover:text-[#c2410c] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2410c]"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#29251f]/15 text-[#29251f] transition-colors hover:border-[#022b5c] hover:text-[#022b5c] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#022b5c]"
           >
             <ChevronRight size={20} aria-hidden="true" />
           </button>

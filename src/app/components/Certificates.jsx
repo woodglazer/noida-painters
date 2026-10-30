@@ -30,13 +30,13 @@ export default function Certificates() {
       className="bg-[#ffff] px-5 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16"
       aria-labelledby="certificates-heading"
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-8xl">
         <div className="mx-auto mb-6 max-w-3xl text-center sm:mb-8">
           <div>
             <p className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#29251f]">
-              <span className="h-px w-8 bg-[#c2410c]" />
+              <span className="h-px w-8 bg-[#022b5c]" />
               Trust &amp; Standards
-              <span className="h-px w-8 bg-[#c2410c]" />
+              <span className="h-px w-8 bg-[#022b5c]" />
             </p>
             <h2
               id="certificates-heading"

@@ -3,8 +3,8 @@ import Navbar from "./components/navbar";
 import Footer from "./components/Footer";
 
 export const metadata = {
-  title: "Page Not Found | Gurgaon Painters",
-  description: "The page you are looking for does not exist. Browse our painting services or return to Gurgaon Painters home.",
+  title: "Page Not Found | Noida Painters",
+  description: "The page you are looking for does not exist. Browse our painting services or return to Noida Painters home.",
   robots: {
     index: false,
     follow: true,
@@ -17,7 +17,7 @@ export default function NotFound() {
       <Navbar />
       <div className="flex-1 flex items-center justify-center px-5 py-24 sm:px-8 sm:py-32">
         <div className="max-w-xl text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c2410c]">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#022b5c]">
             404 Error
           </p>
           <h1 className="mt-4 text-4xl font-medium tracking-tight text-[#29251f] sm:text-5xl">
@@ -29,7 +29,7 @@ export default function NotFound() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/"
-              className="inline-flex items-center justify-center rounded bg-[#c2410c] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#9a3412]"
+              className="inline-flex items-center justify-center rounded bg-[#022b5c] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#011d3f]"
             >
               Back to Home
             </Link>

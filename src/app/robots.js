@@ -19,7 +19,7 @@ export default function robots() {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/admin/"],
+        disallow: "/api/",
       },
       ...aiAgents.map((userAgent) => ({
         userAgent,

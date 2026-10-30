@@ -1,147 +1,181 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-
-const slides = [
-  {
-    title: "Painters in Gurgaon for Homes, Offices & Societies",
-    text: "Protect and elevate your property with durable exterior painting, weather-resistant coatings, and elegant curb appeal.",
-    image: "/images/hero-image-two.webp",
-    imageAlt: "Freshly painted exterior of a modern home in Gurgaon",
-    badge: "Exterior Painting",
-  },
-  {
-    title: "Premium Interior Painting in Gurgaon",
-    text: "High-quality interior painting services with flawless finishes, premium colors, and expert craftsmanship for homes and apartments.",
-    image: "/images/sons-bedroom.webp",
-    imageAlt: "Bedroom interior with wooden furniture and green accents",
-    badge: "Interior Painting",
-  },
-];
-
-const AUTO_PLAY_INTERVAL = 5000;
+import { useState } from "react";
+import { Phone, ArrowRight } from "lucide-react";
+import { BUSINESS_PHONE, BUSINESS_PHONE_HREF } from "@/lib/business-contact";
 
 export default function Hero() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formMessage, setFormMessage] = useState("");
 
-  const goToNext = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  }, []);
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const formData = new FormData(form);
 
-  useEffect(() => {
-    if (isPaused) return;
-    const timer = setInterval(goToNext, AUTO_PLAY_INTERVAL);
-    return () => clearInterval(timer);
-  }, [goToNext, isPaused]);
+    const projectMessage = [
+      "Hello Noida Painters, I would like to book a Free Site Visit.",
+      `Name: ${formData.get("name")}`,
+      `Phone: ${formData.get("phone")}`,
+      `Location: ${formData.get("message") || "Free Site Visit Request"}`,
+    ].join("\n");
+
+    const encodedWhatsappUrl = `https://wa.me/919717256514?text=${encodeURIComponent(projectMessage)}`;
+    const whatsappWindow = window.open("about:blank", "_blank");
+    if (whatsappWindow) whatsappWindow.opener = null;
+
+    setIsSubmitting(true);
+    setFormMessage("");
+
+    try {
+      await fetch("/api/enquiries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          phone: formData.get("phone"),
+          service: "Free Site Visit Consultation",
+          message: formData.get("message") || "Free Site Visit Request",
+        }),
+      });
+
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "generate_lead", {
+          service: "Free Site Visit",
+          method: "hero_form",
+        });
+      }
+
+      form.reset();
+      setFormMessage("Request received! Connecting to WhatsApp...");
+      if (whatsappWindow) {
+        whatsappWindow.location.href = encodedWhatsappUrl;
+      } else {
+        window.location.href = encodedWhatsappUrl;
+      }
+    } catch {
+      if (whatsappWindow) {
+        whatsappWindow.location.href = encodedWhatsappUrl;
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
 
   return (
-    <section
-      className="relative overflow-hidden bg-[#f6f6f4]"
-      aria-label="Featured painting services"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      <div className="w-full">
-        <div className="relative overflow-hidden shadow-[0_24px_80px_rgba(11,31,77,0.14)]">
-          {/* Slides track */}
-          <div
-            className="flex transition-transform duration-700 ease-in-out"
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-          >
-            {slides.map((slide, index) => (
-              <div
-                key={`${slide.badge}-${index}`}
-                className="relative min-h-[76vh] w-full shrink-0 md:min-h-[82vh]"
-                aria-hidden={index !== currentSlide}
+    <section className="relative flex min-h-[82vh] w-full items-center pt-24 pb-16 sm:min-h-[85vh] sm:pt-28 sm:pb-20 lg:min-h-[88vh] lg:pt-32 lg:pb-24">
+      {/* Background Hero Image - Full Width */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Image
+          src="/images/noida-hero-room.webp"
+          alt="Painting Services in Noida"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        {/* Soft natural dark tint */}
+        <div className="absolute inset-0 bg-slate-950/50" />
+      </div>
+
+      {/* Hero Content */}
+      <div className="relative z-10 mx-auto w-full max-w-8xl px-5 sm:px-8 lg:px-12">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+          
+          {/* Left Column: H1, Paragraph, and Phone Call Button */}
+          <div className="text-white lg:col-span-7 xl:col-span-8">
+            <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-6xl">
+              Painting Services in Noida
+            </h1>
+
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-100 sm:text-lg">
+              Looking for professional <strong className="font-semibold text-white">painting services near me in Noida</strong>? We provide reliable interior and exterior <strong className="font-semibold text-white">painting services in Noida</strong> and Greater Noida for high-rise flats, villas, and offices with dust-free sanding and genuine branded paints.
+            </p>
+
+            <div className="mt-8">
+              <a
+                href={BUSINESS_PHONE_HREF}
+                className="inline-flex items-center gap-2.5 rounded-lg bg-[#022b5c] px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-[#011d3f] border border-white/20"
               >
-                <Image
-                  src={slide.image}
-                  alt={slide.imageAlt}
-                  fill
-                  sizes="100vw"
-                  loading={index === 0 ? "eager" : "lazy"}
-                  fetchPriority={index === 0 ? "high" : "auto"}
-                  className="object-cover"
-                />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[rgba(6,15,34,0.15)] via-[rgba(6,15,34,0.45)] to-[rgba(6,15,34,0.72)]" />
+                <Phone size={17} />
+                <span>Call {BUSINESS_PHONE}</span>
+              </a>
+            </div>
+          </div>
 
-                {/* Content */}
-                <div className="absolute inset-0 z-10 flex items-center justify-center px-5 text-center text-white sm:px-8">
-                  <div className="max-w-[780px]">
-                    {/* Badge */}
-                    <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-white/90 backdrop-blur-sm md:mb-6">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#c2410c]" />
-                      {slide.badge}
-                    </span>
-
-                    {index === 0 ? (
-                      <h1 className="mb-4 text-[clamp(2.4rem,5.5vw,5rem)] font-black leading-[0.94] tracking-[-0.06em] text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.25)] md:mb-5">
-                        {slide.title}
-                      </h1>
-                    ) : (
-                      <h2 className="mb-4 text-[clamp(2.4rem,5.5vw,5rem)] font-black leading-[0.94] tracking-[-0.06em] text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.25)] md:mb-5">
-                        {slide.title}
-                      </h2>
-                    )}
-
-                    <p className="mx-auto max-w-[30rem] text-sm leading-6 text-white/85 sm:text-[0.95rem] md:max-w-[34rem] md:text-[1.05rem] md:leading-7">
-                      {slide.text}
-                    </p>
-
-                    <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-9">
-                      <a
-                        href="tel:+919717256514"
-                        className="inline-flex items-center justify-center rounded-full bg-[#c2410c] px-7 py-3 text-[0.8rem] font-extrabold uppercase tracking-[0.08em] text-white shadow-[0_12px_30px_rgba(194,65,12,0.32)] transition-transform duration-200 hover:-translate-y-0.5 md:px-8 md:py-3.5 md:text-[0.85rem]"
-                      >
-                        Get Free Quote
-                      </a>
-                      <Link
-                        href="/services"
-                        className="inline-flex items-center justify-center rounded-full border border-white/35 bg-white/10 px-7 py-3 text-[0.8rem] font-semibold uppercase tracking-[0.08em] text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/20 md:px-8 md:py-3.5 md:text-[0.85rem]"
-                      >
-                        Our Services
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+          {/* Right Column: Compact Form (No required services dropdown) */}
+          <div className="flex justify-center lg:col-span-5 lg:justify-end xl:col-span-4">
+            <div className="w-full max-w-sm rounded-xl border border-slate-200 bg-white p-5 shadow-xl sm:p-6">
+              <div className="border-b border-slate-100 pb-3">
+                <h2 className="text-xl font-bold text-slate-900">
+                  Book a Free Site Visit
+                </h2>
+                <p className="mt-1 text-xs text-slate-500">
+                  Leave your details and our team will get in touch.
+                </p>
               </div>
-            ))}
+
+              <form onSubmit={handleSubmit} className="mt-4 space-y-3.5">
+                <div>
+                  <label htmlFor="hero-name" className="block text-xs font-medium text-slate-700">
+                    Full Name <span className="text-rose-500">*</span>
+                  </label>
+                  <input
+                    id="hero-name"
+                    name="name"
+                    type="text"
+                    required
+                    placeholder="Enter your name"
+                    className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-[#022b5c] focus:outline-none focus:ring-1 focus:ring-[#022b5c]"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="hero-phone" className="block text-xs font-medium text-slate-700">
+                    Phone Number <span className="text-rose-500">*</span>
+                  </label>
+                  <input
+                    id="hero-phone"
+                    name="phone"
+                    type="tel"
+                    required
+                    placeholder="Enter 10-digit mobile number"
+                    className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-[#022b5c] focus:outline-none focus:ring-1 focus:ring-[#022b5c]"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="hero-message" className="block text-xs font-medium text-slate-700">
+                    Society / Locality
+                  </label>
+                  <input
+                    id="hero-message"
+                    name="message"
+                    type="text"
+                    placeholder="e.g. Sector 137, Noida"
+                    className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:border-[#022b5c] focus:outline-none focus:ring-1 focus:ring-[#022b5c]"
+                  />
+                </div>
+
+                {formMessage && (
+                  <p className="rounded bg-emerald-50 p-2 text-xs font-medium text-emerald-800">
+                    {formMessage}
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="mt-2 flex w-full items-center justify-center gap-2 rounded-md bg-[#022b5c] py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#011d3f] disabled:opacity-70"
+                >
+                  <span>{isSubmitting ? "Please wait..." : "Request Call Back"}</span>
+                  <ArrowRight size={15} />
+                </button>
+              </form>
+            </div>
           </div>
 
-          {/* Dot navigation */}
-          <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2.5 md:bottom-8">
-            {slides.map((slide, index) => (
-              <button
-                key={slide.badge}
-                type="button"
-                aria-label={`Go to slide ${index + 1}: ${slide.badge}`}
-                aria-current={index === currentSlide ? "true" : undefined}
-                onClick={() => {
-                  setCurrentSlide(index);
-                  setIsPaused(true);
-                  setTimeout(() => setIsPaused(false), 8000);
-                }}
-                className={`h-2 rounded-full transition-all duration-400 ${
-                  index === currentSlide
-                    ? "w-7 bg-white"
-                    : "w-2 bg-white/45 hover:bg-white/70"
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* Progress bar */}
-          <div className="absolute bottom-0 left-0 right-0 z-20 h-[3px] bg-white/10">
-            <div
-              key={`progress-${currentSlide}-${isPaused}`}
-              className={`h-full bg-[#c2410c] ${!isPaused ? "animate-[heroProgress_5s_linear_1]" : ""}`}
-              style={{ width: isPaused ? "0%" : undefined }}
-            />
-          </div>
         </div>
       </div>
     </section>

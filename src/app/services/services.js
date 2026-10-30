@@ -1,80 +1,164 @@
 export const services = [
   {
-    slug: "interior-painting-gurgaon",
-    title: "Interior Painting in Gurgaon",
-    seoTitle: "Interior Painting Gurgaon | Gurgaon Painters",
-    h1: "Interior Painting Services in Gurgaon",
-    shortTitle: "Interior Painting",
-    description: "Interior painting in Gurgaon for flats, villas, builder floors and offices. Surface preparation, colour guidance and a clean finish. Free site visit.",
-    image: "/images/service-interior.webp",
-    imageAlt: "Painter applying a fresh coat to a bright home interior",
-    intro: "Walls are among the largest surfaces in a room, and their preparation and finish shape how the space looks and feels. Gurgaon Painters by Home Glazer provides interior painting in Gurgaon and Gurugram for apartments, builder floors, independent houses, villas, offices and shops. Home Glazer reports being founded in 2008 and completing more than 5,000 projects. A free site visit helps discuss the walls, your preferences and a clear scope before work begins.",
-    details: ["Wall and ceiling painting for single rooms, selected areas or complete properties.", "Surface repairs such as filling cracks and patches, where included in the agreed scope.", "Primer and finish coats selected for the room, surface and product guidance.", "Protection of floors, furniture, switchboards and fittings during the agreed work."],
-  },
-  {
-    slug: "exterior-painting-gurgaon",
-    title: "Exterior Painting in Gurgaon",
-    seoTitle: "Exterior Painting Gurgaon | Gurgaon Painters",
-    h1: "Exterior Painting Services in Gurgaon",
-    shortTitle: "Exterior Painting",
-    description: "Exterior painting in Gurgaon for homes and buildings. Facade inspection, agreed repairs and weather-suitable coatings. Book a free site visit.",
-    image: "/images/service-exterior.webp",
-    imageAlt: "Painter refreshing the exterior of a modern home",
-    intro: "An exterior wall meets sun, dust and rain, so the coating needs to suit the facade and its condition. Gurgaon Painters by Home Glazer provides exterior painting in Gurgaon and Gurugram for independent houses, villas, builder floors, apartment buildings and commercial properties. Home Glazer reports being founded in 2008 and completing more than 5,000 projects. Planning begins with discussing the existing surface and the work needed before choosing a finish.",
-    details: ["Exterior wall painting for houses, villas, boundary walls and building facades.", "Review of loose paint, cracks, chalking, algae or visible damp marks.", "Cleaning, repairs, primer and finish coats as agreed for the facade.", "Access, protection and work sequencing discussed before scheduling."],
-  },
-  {
-    slug: "wall-texture-painting-gurgaon",
-    title: "Wall Texture Painting in Gurgaon",
-    seoTitle: "Wall Texture Painting Gurgaon | Gurgaon Painters",
-    h1: "Wall Texture Painting Services in Gurgaon",
-    shortTitle: "Wall Textures",
-    description: "Wall texture painting in Gurgaon for feature walls, homes and offices. Review samples, prepare the wall and plan a neat finish. Free site visit.",
-    image: "/images/service-texture.webp",
-    imageAlt: "Artisan applying a decorative finish to an interior wall",
-    intro: "A well-chosen texture can give a room depth and character beyond a flat colour. Gurgaon Painters by Home Glazer provides wall texture painting in Gurgaon and Gurugram for living rooms, bedrooms, foyers, staircases, offices and reception areas. The pattern, colour, lighting and wall condition all matter, so discuss samples and preparation before confirming the design and application scope.",
-    details: ["Discussion of texture styles and suitable feature wall locations.", "Review of samples against room lighting, furniture and surrounding colours.", "Wall inspection and preparation based on the existing coating and condition.", "Application and finishing according to the selected system and agreed scope."],
-  },
-  {
-    slug: "waterproofing-services-gurgaon",
-    title: "Waterproofing Services in Gurgaon",
-    seoTitle: "Waterproofing Gurgaon | Gurgaon Painters",
-    h1: "Waterproofing Services in Gurgaon",
-    shortTitle: "Waterproofing",
-    description: "Waterproofing in Gurgaon for terraces, damp walls and exposed surfaces. Source assessment, reliable treatment and clear scope. Free site visit.",
-    image: "/images/service-waterproofing.webp",
-    imageAlt: "Protective coating being applied to a rooftop terrace",
-    intro: "Recurring damp patches, peeling paint and terrace leakage call for understanding the likely moisture source before choosing a treatment. Gurgaon Painters by Home Glazer provides waterproofing services in Gurgaon and Gurugram for terraces, damp walls and exposed surfaces. A coating alone may not resolve a plumbing, joint or structural issue, so the proposed work should be based on the affected area and site assessment.",
-    details: ["Assessment of visible moisture symptoms on terraces, walls and exposed surfaces.", "Discussion of the likely source and any checks or repairs needed first.", "Treatment selection based on the surface and site conditions.", "Guidance on curing, drying and when repainting can begin, following product instructions."],
-  },
-  {
-    slug: "wood-metal-painting-polish-gurgaon",
-    title: "Wood & Metal Painting and Polishing in Gurgaon",
-    seoTitle: "Wood & Metal Finishes Gurgaon | Gurgaon Painters",
-    shortTitle: "Wood & Metal Finishes",
-    description: "Wood polishing and metal painting in Gurgaon for doors, furniture, railings, and fittings, planned for each material and its condition.",
-    image: "/images/service-wood-metal.webp",
-    imageAlt: "Craftsperson polishing a wooden door and metal railing",
-    intro: "Doors, furniture, railings, and metal fittings need finishes suited to their material, existing coating, and everyday use. Review the condition and intended appearance before agreeing on preparation and finishing work.",
-    details: ["Wood polishing and refinishing for doors, furniture, and selected fittings.", "Paint and protective finishes for metal railings, gates, and fixtures.", "Preparation based on the existing finish, wear, and surface condition.", "Colour and sheen selection suited to the surrounding interior or exterior."],
-    guidance: [
-      { title: "Identify the material and existing finish", text: "Wood and metal need different preparation and finishing systems. The assessment should establish the material, existing coating, wear, exposure, and intended use. For example, a frequently handled door and an outdoor railing face different conditions, so one finish should not be assumed to suit both." },
-      { title: "Discuss preparation and the finish you expect", text: "Ask whether the existing coating needs cleaning, sanding, removal, rust treatment, or a suitable primer before refinishing. Confirm the colour or polish, sheen, areas to be covered, and how nearby surfaces will be protected. Product selection should follow the material and site conditions." },
+    "slug": "interior-painting-noida",
+    "title": "Interior Painting in Noida",
+    "seoTitle": "Interior Painting Noida | Noida Painters",
+    "h1": "Interior Painting Services in Noida",
+    "shortTitle": "Interior Painting",
+    "description": "Interior painting in Noida for high-rise flats, villas and builder floors. Clean execution, dust-free sanding and smooth finish. Free site visit.",
+    "image": "/images/service-interior.webp",
+    "imageAlt": "Professional painter applying smooth luxury paint coat in a modern Noida apartment",
+    "intro": "Modern Noida living centers on high-rise societies and spacious villas where wall quality and lighting define the ambiance. Noida Painters by Home Glazer delivers expert interior painting across Noida and Greater Noida for apartments, builder floors, penthouses, and independent houses. With dust-controlled sanding, careful masking of designer floors, and premium low-VOC emulsions, we ensure your living space is transformed cleanly and on time.",
+    "details": [
+      "Full apartment and single-room painting tailored to society guidelines.",
+      "Crack filling, joint tape sealing, and gypsum plaster repair.",
+      "Odorless, washable luxury emulsions (matte, silk, sheen finishes).",
+      "Comprehensive protection of floors, modular kitchens, and light fittings."
     ],
+    "guidance": [
+      {
+        "title": "Assess the property and surfaces",
+        "text": "Review the condition of existing walls, cracks, damp marks, and previous coats to determine the right surface preparation and primer requirements."
+      },
+      {
+        "title": "Define project scope and protection",
+        "text": "Confirm the specific rooms, finishes, color palettes, and protection measures for floors and furniture before scheduling the work."
+      }
+    ]
   },
   {
-    slug: "commercial-painting-gurgaon",
-    title: "Commercial Painting in Gurgaon",
-    seoTitle: "Commercial Painting Gurgaon | Gurgaon Painters",
-    shortTitle: "Commercial Painting",
-    description: "Commercial painting in Gurgaon for offices, shops, apartment buildings, and shared spaces, with work planned around site access and use.",
-    image: "/images/service-commercial.webp",
-    imageAlt: "Painters refreshing a bright commercial office interior",
-    intro: "Plan painting for Gurgaon offices, shops, apartment buildings, and other commercial properties with a clear scope for each area. Site access, surface condition, work sequencing, and protection requirements can be discussed before scheduling.",
-    details: ["Interior and exterior painting for offices, shops, and shared spaces.", "Work area and surface assessment to define preparation and finish requirements.", "Project scope and sequencing discussed around property access and use.", "Protection and clean-up requirements clarified before work starts."],
-    guidance: [
-      { title: "Define the work zones and operating constraints", text: "For an office, shop, apartment building, or shared property, list the rooms and surfaces in scope and note when people use them. Access, furniture or equipment, noise-sensitive periods, and shared corridors can affect sequencing. Agree on access arrangements and any restricted areas before scheduling." },
-      { title: "Make the project scope clear for each area", text: "Different rooms or facade sections may need different preparation and finishes. Ask the contractor to document the surfaces, repairs, materials, coats, protection, work sequence, and clean-up included in the proposal. If the property remains in use, clarify how completed and active work areas will be separated." },
+    "slug": "exterior-painting-noida",
+    "title": "Exterior Painting in Noida",
+    "seoTitle": "Exterior Painting Noida | Noida Painters",
+    "h1": "Exterior Painting Services in Noida",
+    "shortTitle": "Exterior Painting",
+    "description": "Exterior painting in Noida for villas, kothis and buildings. Weather-proof facade coatings, crack bridging and heat resistance. Free site visit.",
+    "image": "/images/service-exterior.webp",
+    "imageAlt": "Exterior wall painting of an independent residential house in Noida",
+    "intro": "Noida's climate brings intense summer sun, dry dust storms, and monsoon downpours. Exterior surfaces require durable, UV-resistant, and weather-proof coating systems. We provide comprehensive facade preparation, exterior crack repairs, anti-algal treatments, and high-performance exterior finishes for independent kothis, villas, boundary walls, and institutional properties across Noida.",
+    "details": [
+      "Facade and boundary wall painting for independent residences and villas.",
+      "Pressure washing, loose paint scraping, and fungal treatment.",
+      "Elastomeric crack bridging and anti-dust weather-guard coatings.",
+      "Safe scaffolding setup adhering to local safety and security protocols."
     ],
+    "guidance": [
+      {
+        "title": "Assess the property and surfaces",
+        "text": "Review the condition of existing walls, cracks, damp marks, and previous coats to determine the right surface preparation and primer requirements."
+      },
+      {
+        "title": "Define project scope and protection",
+        "text": "Confirm the specific rooms, finishes, color palettes, and protection measures for floors and furniture before scheduling the work."
+      }
+    ]
   },
+  {
+    "slug": "wall-texture-painting-noida",
+    "title": "Wall Texture Painting in Noida",
+    "seoTitle": "Wall Texture Painting Noida | Noida Painters",
+    "h1": "Wall Texture Painting Services in Noida",
+    "shortTitle": "Wall Textures",
+    "description": "Wall texture painting in Noida for statement walls, living rooms and offices. Metallic, rustic, stone and designer finishes. Free site visit.",
+    "image": "/images/service-texture.webp",
+    "imageAlt": "Artisan applying a designer decorative wall texture in a Noida home",
+    "intro": "Create a dramatic focal point in your Noida living room, master bedroom, or executive cabin with customized wall textures. From concrete-look stucco and metallic luster to subtle geometric patterns and rustic stone finishes, our artisans bring precision craftsmanship and tactile luxury to every feature wall.",
+    "details": [
+      "Custom feature wall designs for living rooms, TV units, and foyers.",
+      "Sample reviews against apartment natural and warm artificial lighting.",
+      "Surface preparation to ensure uniform adhesion and razor-sharp detailing.",
+      "Protective clear glaze coats for enhanced durability and wipeability."
+    ],
+    "guidance": [
+      {
+        "title": "Assess the property and surfaces",
+        "text": "Review the condition of existing walls, cracks, damp marks, and previous coats to determine the right surface preparation and primer requirements."
+      },
+      {
+        "title": "Define project scope and protection",
+        "text": "Confirm the specific rooms, finishes, color palettes, and protection measures for floors and furniture before scheduling the work."
+      }
+    ]
+  },
+  {
+    "slug": "waterproofing-services-noida",
+    "title": "Waterproofing Services in Noida",
+    "seoTitle": "Waterproofing Services Noida | Noida Painters",
+    "h1": "Waterproofing Services in Noida",
+    "shortTitle": "Waterproofing",
+    "description": "Waterproofing services in Noida for damp walls, terraces and balconies. Leakage diagnosis, polymer coating and durable repair. Free site visit.",
+    "image": "/images/service-waterproofing.webp",
+    "imageAlt": "Technician applying waterproof polymer coating to a terrace surface in Noida",
+    "intro": "Dampness in high-rise balconies, terrace gardens, and plumbing shafts is a common challenge in Noida high-rises. Before painting, identifying and sealing the moisture pathway is critical. Noida Painters provides diagnosis-driven waterproofing systems, polyurethane coatings, and polymer-modified cementitious barriers for enduring moisture defense.",
+    "details": [
+      "Moisture meter assessment for damp walls, peeling paint, and efflorescence.",
+      "Balcony, terrace, and parapet wall seamless waterproof membrane application.",
+      "Injection grouting and bathroom negative-side crystalline waterproofing.",
+      "Complete drying protocol before applying decorative finish coats."
+    ],
+    "guidance": [
+      {
+        "title": "Assess the property and surfaces",
+        "text": "Review the condition of existing walls, cracks, damp marks, and previous coats to determine the right surface preparation and primer requirements."
+      },
+      {
+        "title": "Define project scope and protection",
+        "text": "Confirm the specific rooms, finishes, color palettes, and protection measures for floors and furniture before scheduling the work."
+      }
+    ]
+  },
+  {
+    "slug": "wood-metal-painting-polish-noida",
+    "title": "Wood & Metal Painting and Polishing in Noida",
+    "seoTitle": "Wood & Metal Finishes Noida | Noida Painters",
+    "h1": "Wood Polishing & Metal Painting in Noida",
+    "shortTitle": "Wood & Metal Finishes",
+    "description": "Wood polishing and metal painting in Noida for doors, cabinets, MS railings and gates. Melamine, PU polish and enamel coatings. Free quote.",
+    "image": "/images/service-wood-metal.webp",
+    "imageAlt": "Polishing a solid wooden door and painting metal balcony railings in Noida",
+    "intro": "Main doors, interior veneer paneling, modular wood fittings, and decorative metal railings require specialized care. We offer high-gloss and matte PU polishing, Italian wood finishes, melamine coatings, and anti-corrosive enamel painting for metal grills and stair balustrades across Noida homes.",
+    "details": [
+      "PU (Polyurethane) and Melamine polishing for veneer doors and solid timber.",
+      "Rust-inhibitive primer and enamel painting for balcony railings and gates.",
+      "Precision grain filling, staining, and scratch-resistant protective coats.",
+      "Site protection to prevent overspray on surrounding walls and flooring."
+    ],
+    "guidance": [
+      {
+        "title": "Assess the property and surfaces",
+        "text": "Review the condition of existing walls, cracks, damp marks, and previous coats to determine the right surface preparation and primer requirements."
+      },
+      {
+        "title": "Define project scope and protection",
+        "text": "Confirm the specific rooms, finishes, color palettes, and protection measures for floors and furniture before scheduling the work."
+      }
+    ]
+  },
+  {
+    "slug": "commercial-painting-noida",
+    "title": "Commercial Painting in Noida",
+    "seoTitle": "Commercial Painting Noida | Noida Painters",
+    "h1": "Commercial Painting Services in Noida",
+    "shortTitle": "Commercial Painting",
+    "description": "Commercial painting in Noida for IT offices, retail shops, co-working spaces and facilities. Fast turnaround and night shifts. Free site visit.",
+    "image": "/images/service-commercial.webp",
+    "imageAlt": "Professional painters refreshing a vibrant corporate IT office in Noida Sector 62",
+    "intro": "Noida is a thriving corporate and commercial epicenter with IT parks in Sector 62, 125, and 135, and bustling retail markets in Sector 18. We provide scalable commercial painting solutions planned around your operational timelines, including night shifts and weekend execution with zero downtime for your enterprise.",
+    "details": [
+      "Office interiors, co-working spaces, conference rooms, and hallways.",
+      "Low-odor, rapid-curing paints allowing immediate next-day occupancy.",
+      "Scheduled night shifts and weekend sprints to eliminate business disruption.",
+      "Formal commercial proposals with detailed bills of quantities (BOQ)."
+    ],
+    "guidance": [
+      {
+        "title": "Assess the property and surfaces",
+        "text": "Review the condition of existing walls, cracks, damp marks, and previous coats to determine the right surface preparation and primer requirements."
+      },
+      {
+        "title": "Define project scope and protection",
+        "text": "Confirm the specific rooms, finishes, color palettes, and protection measures for floors and furniture before scheduling the work."
+      }
+    ]
+  }
 ];

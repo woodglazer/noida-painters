@@ -22,7 +22,7 @@ export default function Contact() {
     const form = event.currentTarget;
     const formData = new FormData(form);
     const projectMessage = [
-      "Hello Gurgaon Painters, I would like to request a painting quote.",
+      "Hello Noida Painters, I would like to request a painting quote.",
       `Name: ${formData.get("name")}`,
       `Phone: ${formData.get("phone")}`,
       `Service: ${formData.get("service")}`,
@@ -83,21 +83,21 @@ export default function Contact() {
   }
 
   const fieldClassName =
-    "mt-2 w-full rounded-md border border-[#dedbd4] bg-white px-4 py-3 text-sm text-[#29251f] outline-none transition focus:border-[#c2410c] focus:ring-2 focus:ring-[#c2410c]/20";
+    "mt-2 w-full rounded-md border border-[#dedbd4] bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[#022b5c] focus:ring-2 focus:ring-[#022b5c]/20";
 
   return (
-    <section id="contact" className="bg-[#f6f6f4] px-5 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16">
-      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
+    <section id="contact" className="bg-white py-14 sm:py-18 lg:py-20 border-b border-slate-200">
+      <div className="mx-auto grid max-w-8xl gap-8 px-5 sm:px-8 lg:px-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
         <div className="text-left">
-          <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#29251f]">
-            <span className="h-px w-8 bg-[#c2410c]" />
+          <p className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-900">
+            <span className="h-px w-8 bg-[#022b5c]" />
             Get in touch
           </p>
-          <h2 className="max-w-xl text-4xl font-medium leading-tight tracking-[-0.045em] text-[#29251f] sm:text-5xl lg:text-6xl">
+          <h2 className="max-w-xl text-4xl font-medium leading-tight tracking-[-0.045em] text-slate-900 sm:text-5xl lg:text-6xl">
             Let’s talk about your space
           </h2>
-          <p className="mt-5 max-w-md text-sm leading-6 text-[#69645b] sm:text-base sm:leading-7">
-            Looking for painters in Gurgaon or Gurugram? Gurgaon Painters by
+          <p className="mt-5 max-w-md text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
+            Looking for painters in Noida or Greater Noida? Noida Painters by
             Home Glazer offers interior and exterior home painting, wall
             textures, waterproofing, wood and metal finishes, and commercial
             painting. Share your requirements for a quote for your home,
@@ -105,18 +105,18 @@ export default function Contact() {
           </p>
           <a
             href={BUSINESS_PHONE_HREF}
-            className="mt-7 inline-flex items-center gap-3 text-sm font-semibold text-[#29251f] transition-colors hover:text-[#c2410c]"
+            className="mt-7 inline-flex items-center gap-3 text-sm font-semibold text-slate-900 transition-colors hover:text-[#022b5c]"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#c2410c] shadow-sm">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#022b5c] shadow-sm">
               <Phone size={17} strokeWidth={1.7} aria-hidden="true" />
             </span>
             {BUSINESS_PHONE}
           </a>
           <a
             href={`mailto:${BUSINESS_EMAIL}`}
-            className="mt-4 inline-flex items-center gap-3 text-sm font-semibold text-[#29251f] transition-colors hover:text-[#c2410c]"
+            className="mt-4 inline-flex items-center gap-3 text-sm font-semibold text-slate-900 transition-colors hover:text-[#022b5c]"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#c2410c] shadow-sm">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#022b5c] shadow-sm">
               <Mail size={17} strokeWidth={1.7} aria-hidden="true" />
             </span>
             {BUSINESS_EMAIL}
@@ -125,7 +125,7 @@ export default function Contact() {
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-md border border-[#e7e2d9] bg-white p-5 sm:p-7 lg:p-8"
+          className="rounded-xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm"
         >
           <div className="grid gap-5 sm:grid-cols-2">
             <label className="text-sm font-medium text-[#514b41]">
@@ -183,7 +183,7 @@ export default function Contact() {
           </div>
 
           <button
-            className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md bg-[#c2410c] px-5 text-sm font-bold text-white transition-colors hover:bg-[#9a3412] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c2410c] sm:w-auto"
+            className="mt-6 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-md bg-[#022b5c] px-5 text-sm font-bold text-white transition-colors hover:bg-[#011d3f] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#022b5c] sm:w-auto"
             type="submit"
             disabled={isSubmitting}
             aria-disabled={isSubmitting}
@@ -214,7 +214,7 @@ export default function Contact() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[#c2410c] hover:text-[#9a3412]"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[#022b5c] hover:text-[#011d3f]"
             >
               Continue to WhatsApp
               <ArrowUpRight size={15} aria-hidden="true" />

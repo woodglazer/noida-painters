@@ -13,8 +13,8 @@ const cookieFaqs = [
 ];
 
 export const metadata = createSeoMetadata({
-  title: "Cookies | Gurgaon Painters",
-  description: "Learn which cookies Gurgaon Painters by Home Glazer uses, why the cookie notice preference is stored, and how to clear it.",
+  title: "Cookies | Noida Painters",
+  description: "Learn which cookies Noida Painters by Home Glazer uses, why the cookie notice preference is stored, and how to clear it.",
   ...(siteUrl ? { alternates: { canonical: `${siteUrl}/cookies` } } : {}),
   openGraph: { url: siteUrl ? `${siteUrl}/cookies` : undefined, type: "website" },
 });
@@ -27,9 +27,9 @@ export default function CookiesPage() {
       <section className="px-5 pb-12 pt-28 sm:px-8 sm:pb-16 sm:pt-32 lg:px-12">
         <article className="mx-auto max-w-4xl">
           <header>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c2410c]">Website information</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#022b5c]">Website information</p>
             <h1 className="mt-4 text-4xl font-medium leading-tight tracking-[-0.045em] text-[#29251f] sm:text-5xl">Cookie Policy</h1>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-[#69645b]">This page explains the small amount of cookie storage used on the Gurgaon Painters by Home Glazer website.</p>
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-[#69645b]">This page explains the small amount of cookie storage used on the Noida Painters by Home Glazer website.</p>
           </header>
           <div className="mt-8 space-y-6 border-t border-[#29251f]/15 pt-7 text-base leading-7 text-[#514b41]">
             <section>

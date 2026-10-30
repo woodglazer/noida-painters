@@ -13,9 +13,9 @@ import {
 const siteUrl = getSiteUrl();
 
 export const metadata = createSeoMetadata({
-  title: "Privacy | Gurgaon Painters",
+  title: "Privacy | Noida Painters",
   description:
-    "Read how Gurgaon Painters by Home Glazer handles enquiry details, WhatsApp contact and the essential cookie used on this website.",
+    "Read how Noida Painters by Home Glazer handles enquiry details, WhatsApp contact and the essential cookie used on this website.",
   ...(siteUrl
     ? { alternates: { canonical: `${siteUrl}/privacy-policy` } }
     : {}),
@@ -90,7 +90,7 @@ const sections = [
         Analytics may store analytics cookies. Advertising cookies are not
         enabled. You can remove cookies in your browser settings. See our{" "}
         <Link
-          className="font-semibold text-[#c2410c] underline underline-offset-4"
+          className="font-semibold text-[#022b5c] underline underline-offset-4"
           href="/cookies"
         >
           Cookie Policy
@@ -115,7 +115,7 @@ const sections = [
     content: (
       <>
         <p>
-          This policy applies to information collected through the Gurgaon
+          This policy applies to information collected through the Noida
           Painters website. For privacy questions or requests, contact Home
           Glazer:
         </p>
@@ -145,14 +145,14 @@ export default function PrivacyPolicyPage() {
       <section className="px-5 pb-12 pt-28 sm:px-8 sm:pb-16 sm:pt-32 lg:px-12">
         <article className="mx-auto max-w-4xl">
           <header>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c2410c]">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#022b5c]">
               Website information
             </p>
             <h1 className="mt-4 text-4xl font-medium leading-tight tracking-[-0.045em] text-[#29251f] sm:text-5xl">
               Privacy Policy
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#69645b]">
-              Learn how Gurgaon Painters by Home Glazer handles information you
+              Learn how Noida Painters by Home Glazer handles information you
               share when you ask about our painting services.
             </p>
             <p className="mt-3 text-sm text-[#817a6e]">

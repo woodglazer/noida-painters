@@ -9,9 +9,9 @@ import { areas } from "./areas";
 const siteUrl = getSiteUrl();
 
 export const metadata = createSeoMetadata({
-  title: "Areas We Serve in Gurgaon | Gurgaon Painters",
+  title: "Areas We Serve in Noida | Noida Painters",
   description:
-    "Explore painting services across Gurgaon localities, from DLF phases and Golf Course Road to Sohna Road and New Gurgaon sectors.",
+    "Explore painting services across Noida localities, from DLF phases and Golf Course Road to Sohna Road and New Noida sectors.",
   ...(siteUrl ? { alternates: { canonical: `${siteUrl}/areas` } } : {}),
   openGraph: {
     ...(siteUrl ? { url: `${siteUrl}/areas` } : {}),
@@ -24,14 +24,14 @@ export default function AreasPage() {
     <main className="relative min-h-screen bg-[#f6f6f4]">
       <Navbar />
       <Breadcrumbs
-        width="6xl"
+        width="8xl"
         items={[{ label: "Home", href: "/" }, { label: "Areas We Serve" }]}
       />
-      <section className="px-5 pb-14 pt-28 sm:px-8 sm:pb-20 sm:pt-32 lg:px-12">
-        <div className="mx-auto max-w-6xl">
+      <section className="pb-14 pt-28 sm:pb-20 sm:pt-32">
+        <div className="mx-auto max-w-8xl px-5 sm:px-8 lg:px-12">
           <header className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c2410c]">
-              Gurgaon &amp; Gurugram
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#022b5c]">
+              Noida &amp; Greater Noida
             </p>
             <h1 className="mt-4 text-4xl font-medium leading-tight tracking-[-0.045em] text-[#29251f] sm:text-5xl">
               Painting services by area
@@ -56,7 +56,7 @@ export default function AreasPage() {
                 </p>
                 <Link
                   href={`/areas/${area.slug}`}
-                  className="mt-4 inline-flex text-sm font-semibold text-[#c2410c] hover:underline"
+                  className="mt-4 inline-flex text-sm font-semibold text-[#022b5c] hover:underline"
                 >
                   Painting in {area.name} →
                 </Link>

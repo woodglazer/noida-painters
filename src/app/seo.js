@@ -1,45 +1,37 @@
-export const BRAND_NAME = "Gurgaon Painters by Home Glazer";
-export const SEO_TITLE_LIMIT = 60;
-export const SEO_DESCRIPTION_LIMIT = 150;
-const DEFAULT_SOCIAL_IMAGE = "/images/hero-image-two.webp";
+export const BRAND_NAME = "Noida Painters";
+export const DEFAULT_PAGE_TITLE = "Painters in Noida | Noida Painters";
+export const DEFAULT_PAGE_DESCRIPTION =
+  "Professional painters in Noida for high-rise flats, villas, builder floors and commercial spaces. Interior, exterior, textures and waterproofing. Free site visit.";
 
-function limitText(value, maxLength) {
-  if (typeof value !== "string") return value;
-  const text = value.trim().replace(/\s+/g, " ");
-  if (text.length <= maxLength) return text;
-
-  const limit = maxLength - 1;
-  const shortened = text.slice(0, limit + 1);
-  const lastSpace = shortened.lastIndexOf(" ");
-  const content = lastSpace > limit * 0.6 ? shortened.slice(0, lastSpace) : shortened.slice(0, limit);
-  return `${content.trim().replace(/[,:;–—-]+$/u, "")}…`;
-}
-
-export function createSeoMetadata({ title, description, openGraph = {}, twitter = {}, ...metadata }) {
-  const safeTitle = limitText(title, SEO_TITLE_LIMIT);
-  const safeDescription = limitText(description, SEO_DESCRIPTION_LIMIT);
-  if (!safeTitle || !safeDescription) {
-    throw new Error("SEO metadata requires a non-empty title and description.");
-  }
-  const safeOpenGraph = {
-    ...openGraph,
-    siteName: openGraph.siteName ?? BRAND_NAME,
-    title: limitText(openGraph.title ?? safeTitle, SEO_TITLE_LIMIT),
-    description: limitText(openGraph.description ?? safeDescription, SEO_DESCRIPTION_LIMIT),
-    images: openGraph.images ?? [DEFAULT_SOCIAL_IMAGE],
-  };
-  const safeTwitter = {
-    ...twitter,
-    title: limitText(twitter.title ?? safeTitle, SEO_TITLE_LIMIT),
-    description: limitText(twitter.description ?? safeDescription, SEO_DESCRIPTION_LIMIT),
-    images: twitter.images ?? [DEFAULT_SOCIAL_IMAGE],
-  };
+export function createSeoMetadata({
+  title,
+  description,
+  openGraph,
+  twitter,
+  ...rest
+}) {
+  const resolvedTitle = title || DEFAULT_PAGE_TITLE;
+  const resolvedDescription = description || DEFAULT_PAGE_DESCRIPTION;
 
   return {
-    ...metadata,
-    title: { absolute: safeTitle },
-    description: safeDescription,
-    openGraph: safeOpenGraph,
-    twitter: safeTwitter,
+    title: {
+      default: resolvedTitle,
+      template: `%s | ${BRAND_NAME}`,
+    },
+    description: resolvedDescription,
+    openGraph: {
+      title: resolvedTitle,
+      description: resolvedDescription,
+      siteName: BRAND_NAME,
+      locale: "en_IN",
+      ...openGraph,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: resolvedTitle,
+      description: resolvedDescription,
+      ...twitter,
+    },
+    ...rest,
   };
 }

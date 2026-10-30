@@ -1,5 +1,5 @@
 export const servicePageContent = {
-  "interior-painting-gurgaon": [
+  "interior-painting-noida": [
     {
       heading: "Plan an interior painting project around the room",
       paragraphs: [
@@ -18,7 +18,7 @@ export const servicePageContent = {
     {
       heading: "Plan for the property and its surroundings",
       paragraphs: [
-        "Many Gurgaon homes are in high-rise societies or builder-floor communities. Work hours, lift use, material movement and gate permissions can be set by the RWA or maintenance office. Share those requirements early so access and scheduling can be discussed before work begins.",
+        "Many Noida homes are in high-rise societies or builder-floor communities. Work hours, lift use, material movement and gate permissions can be set by the RWA or maintenance office. Share those requirements early so access and scheduling can be discussed before work begins.",
         "Heat, dust and monsoon humidity can affect how comfortable a room feels during painting and how quickly a particular product dries. The product instructions and actual site conditions should guide the application and drying intervals. If a wall has recurring dampness, identify and address its likely source before covering it with fresh paint; waterproofing may need to be discussed separately.",
       ],
     },
@@ -55,18 +55,18 @@ export const servicePageContent = {
       ],
     },
     {
-      heading: "Serving homes and businesses across Gurgaon",
+      heading: "Serving homes and businesses across Noida",
       paragraphs: [
-        "Gurgaon Painters by Home Glazer serves residential and commercial projects across Gurgaon (Gurugram). Share your address when you enquire so the team can confirm service availability and any property access requirements.",
+        "Noida Painters by Home Glazer serves residential and commercial projects across Noida & Greater Noida. Share your address when you enquire so the team can confirm service availability and any property access requirements.",
         "The website displays ISO 9001:2015, MSME, DPIIT and labour registration marks. Their current validity and scope should be checked with the issuing authorities. Customer reviews are available through the Google review link on this site; review comments reflect individual customers' experiences.",
       ],
     },
   ],
-  "exterior-painting-gurgaon": [
+  "exterior-painting-noida": [
     {
       heading: "What exterior painting can cover",
       paragraphs: [
-        "Exterior surfaces face sun, dust, rain and pollution. A suitable coating depends on the facade, the existing paint and the condition of the underlying surface. Gurgaon Painters by Home Glazer discusses exterior painting for independent houses, villas, builder floors, apartment buildings and commercial properties across Gurgaon and Gurugram.",
+        "Exterior surfaces face sun, dust, rain and pollution. A suitable coating depends on the facade, the existing paint and the condition of the underlying surface. Noida Painters by Home Glazer discusses exterior painting for independent houses, villas, builder floors, apartment buildings and commercial properties across Noida and Greater Noida.",
       ],
       items: [
         "Exterior walls, boundary walls and building facades.",
@@ -118,18 +118,18 @@ export const servicePageContent = {
       ],
     },
     {
-      heading: "Serving Gurgaon and Gurugram",
+      heading: "Serving Noida and Greater Noida",
       paragraphs: [
-        "The service area stated by Gurgaon Painters by Home Glazer is Gurgaon (Gurugram), Haryana. Share the property location and facade details when you enquire so the team can confirm availability and access arrangements.",
+        "The service area stated by Noida Painters by Home Glazer is Noida & Greater Noida, Haryana. Share the property location and facade details when you enquire so the team can confirm availability and access arrangements.",
         "The website displays ISO 9001:2015, MSME, DPIIT and labour registration marks. Check their current validity and scope with the issuing authorities. The site's Google review link provides customer comments about their own projects and experiences.",
       ],
     },
   ],
-  "wall-texture-painting-gurgaon": [
+  "wall-texture-painting-noida": [
     {
       heading: "What wall texture painting includes",
       paragraphs: [
-        "A decorative texture can add depth and a focal point to a room. Gurgaon Painters by Home Glazer discusses wall texture painting for living rooms, bedrooms, foyers, staircases, offices and reception areas across Gurgaon and Gurugram. The design, lighting and wall condition should all be considered before an application scope is agreed.",
+        "A decorative texture can add depth and a focal point to a room. Noida Painters by Home Glazer discusses wall texture painting for living rooms, bedrooms, foyers, staircases, offices and reception areas across Noida and Greater Noida. The design, lighting and wall condition should all be considered before an application scope is agreed.",
       ],
       items: [
         "Discussion of texture styles and suitable feature wall locations.",
@@ -187,18 +187,18 @@ export const servicePageContent = {
       ],
     },
     {
-      heading: "Serving Gurgaon and Gurugram",
+      heading: "Serving Noida and Greater Noida",
       paragraphs: [
-        "Gurgaon Painters by Home Glazer serves projects across Gurgaon (Gurugram). Share the property location and wall details when you enquire so the team can confirm service availability.",
+        "Noida Painters by Home Glazer serves projects across Noida & Greater Noida. Share the property location and wall details when you enquire so the team can confirm service availability.",
         "The website displays ISO 9001:2015, MSME, DPIIT and labour registration marks. Please verify validity and scope with the issuing authorities. The website's Google review link leads to customer feedback; each review reflects an individual experience.",
       ],
     },
   ],
-  "waterproofing-services-gurgaon": [
+  "waterproofing-services-noida": [
     {
       heading: "Start by understanding the moisture source",
       paragraphs: [
-        "Water can enter through a terrace, exterior wall, joint, window or plumbing connection. Gurgaon Painters by Home Glazer discusses waterproofing for terraces, damp walls and exposed surfaces in homes, apartments and commercial buildings across Gurgaon and Gurugram. The first step is to describe where the dampness appears, when it started and whether it changes after rain or water use.",
+        "Water can enter through a terrace, exterior wall, joint, window or plumbing connection. Noida Painters by Home Glazer discusses waterproofing for terraces, damp walls and exposed surfaces in homes, apartments and commercial buildings across Noida and Greater Noida. The first step is to describe where the dampness appears, when it started and whether it changes after rain or water use.",
         "A coating alone may not resolve a plumbing leak, a structural issue or a problem coming from a neighbouring flat. A site assessment can help identify what is visible and what further check may be appropriate. The right treatment depends on the likely source, the surface and the site conditions.",
       ],
     },
@@ -265,14 +265,14 @@ export const servicePageContent = {
       ],
     },
     {
-      heading: "Serving Gurgaon and Gurugram",
+      heading: "Serving Noida and Greater Noida",
       paragraphs: [
-        "Gurgaon Painters by Home Glazer serves projects across Gurgaon (Gurugram). Share the property location and when the symptoms occur so the team can confirm service availability and discuss next steps.",
+        "Noida Painters by Home Glazer serves projects across Noida & Greater Noida. Share the property location and when the symptoms occur so the team can confirm service availability and discuss next steps.",
         "The website displays ISO 9001:2015, MSME, DPIIT and labour registration marks. Their current validity and scope should be checked with the issuing authorities. The business also links to customer reviews on Google; comments reflect individual customer experiences.",
       ],
     },
   ],
-  "wood-metal-painting-polish-gurgaon": [
+  "wood-metal-painting-polish-noida": [
     {
       heading: "Identify the material and existing finish first",
       paragraphs: [
@@ -313,7 +313,7 @@ export const servicePageContent = {
       ],
     },
     {
-      heading: "Consider dust, sun and monsoon exposure in Gurgaon",
+      heading: "Consider dust, sun and monsoon exposure in Noida",
       paragraphs: [
         "Outdoor gates and railings may face direct sunlight, airborne dust and seasonal rain, while indoor furniture is affected more by handling, cleaning and room conditions. These differences matter when comparing a finish for a balcony railing with one for a bedroom door. Rainwater collecting at joints or rust developing beneath a coating should be assessed before another layer is applied.",
         "Dust can settle on a surface during preparation, and changing humidity can affect drying. The work schedule should be discussed in light of site conditions and the product guidance. In apartment communities and builder-floor properties, confirm access, working hours and any rules for moving equipment or temporarily blocking a shared passage before scheduling.",
@@ -336,10 +336,10 @@ export const servicePageContent = {
         "What drying and handling guidance applies to the actual product?",
         "Are repairs beyond surface preparation included or referred to another specialist?",
       ],
-      closing: "Gurgaon Painters by Home Glazer provides wood and metal finishing for properties across Gurgaon (Gurugram). Share the item list and property location to confirm availability and discuss a site visit.",
+      closing: "Noida Painters by Home Glazer provides wood and metal finishing for properties across Noida & Greater Noida. Share the item list and property location to confirm availability and discuss a site visit.",
     },
   ],
-  "commercial-painting-gurgaon": [
+  "commercial-painting-noida": [
     {
       heading: "Define the areas and operating needs",
       paragraphs: [
@@ -387,9 +387,9 @@ export const servicePageContent = {
       ],
     },
     {
-      heading: "Account for Gurgaon buildings and monsoon conditions",
+      heading: "Account for Noida buildings and monsoon conditions",
       paragraphs: [
-        "Offices and shops in Gurgaon may operate inside managed commercial buildings, while apartment common areas are often subject to society rules. Confirm permissions, working-hour limits, service-lift arrangements and safe access with the responsible building contact. For facade or elevated work, access and safety planning need particular attention and should be covered in the site-specific scope.",
+        "Offices and shops in Noida may operate inside managed commercial buildings, while apartment common areas are often subject to society rules. Confirm permissions, working-hour limits, service-lift arrangements and safe access with the responsible building contact. For facade or elevated work, access and safety planning need particular attention and should be covered in the site-specific scope.",
         "Dust, heat and monsoon humidity can affect when surfaces are suitable for coating and how products dry. The manufacturer's technical instructions and conditions at the property should guide the timing. A calendar estimate should not replace checking whether a surface is ready or whether the building can provide the agreed access.",
       ],
     },
@@ -403,7 +403,7 @@ export const servicePageContent = {
         "Share maintenance information with the facility team or future property manager.",
         "Confirm that occupants can use the spaces under the selected products' instructions.",
       ],
-      closing: "Gurgaon Painters by Home Glazer discusses commercial painting for offices, shops and shared properties across Gurgaon (Gurugram). Share the site address, access rules and work areas to confirm service availability and arrange a visit.",
+      closing: "Noida Painters by Home Glazer discusses commercial painting for offices, shops and shared properties across Noida & Greater Noida. Share the site address, access rules and work areas to confirm service availability and arrange a visit.",
     },
   ],
 };

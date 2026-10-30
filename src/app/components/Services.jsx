@@ -1,82 +1,70 @@
-import {
-  Building2,
-  Droplets,
-  House,
-  Paintbrush,
-  Sparkles,
-  Store,
-} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { services } from "../services/services";
-
-const icons = {
-  "Interior Painting": House,
-  "Exterior Painting": Building2,
-  "Wall Textures": Sparkles,
-  Waterproofing: Droplets,
-  "Wood & Metal Finishes": Paintbrush,
-  "Commercial Painting": Store,
-};
+import { ArrowUpRight } from "lucide-react";
 
 export default function Services() {
   return (
-    <section id="services" className="bg-white px-5 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16">
-      <div className="mx-auto max-w-6xl">
-        <div className="mx-auto mb-6 max-w-3xl text-center sm:mb-8">
-          <div>
-            <p className="mb-4 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#000000]">
-              <span className="h-px w-8 bg-[#c2410c]" />
-              What we do
-              <span className="h-px w-8 bg-[#c2410c]" />
-            </p>
-            <h2 className="text-4xl font-medium leading-tight tracking-[-0.045em] text-[#29251f] sm:text-5xl lg:text-6xl">
-              Painting services in Gurgaon
-            </h2>
-          </div>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-[#69645b] sm:text-base sm:leading-7">
-            From a single room to a complete property refresh, explore home and
-            commercial painting services across Gurgaon and Gurugram.
+    <section className="bg-white py-14 sm:py-18 lg:py-20 border-b border-slate-200" aria-labelledby="services-section-title">
+      <div className="mx-auto max-w-8xl px-5 sm:px-8 lg:px-12">
+        {/* Section Header - Centered like upper section */}
+        <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-12">
+          <p className="mb-3 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#022b5c]">
+            <span className="h-px w-8 bg-[#022b5c]" />
+            Comprehensive Services
+            <span className="h-px w-8 bg-[#022b5c]" />
+          </p>
+          <h2 id="services-section-title" className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            Painting &amp; Finishing Tailored for Noida Properties
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
+            From high-rise apartments with strict society guidelines to spacious independent bungalows, our solutions ensure long-lasting quality and immaculate finishes.
           </p>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ slug, shortTitle: title, description, image, imageAlt }) => {
-            const Icon = icons[title];
-            return <Link
-              href={`/services/${slug}`}
-              key={slug}
-              aria-label={`Learn more about ${title} in Gurgaon`}
-              className="group relative isolate min-h-[300px] overflow-hidden rounded-md bg-[#1a1410] shadow-[0_8px_24px_rgba(35,31,24,0.12)] sm:min-h-[340px]"
+        {/* Services Grid: Image-Only Cards with Heading Overlay Linking Directly */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <Link
+              key={service.slug}
+              href={`/services/${service.slug}`}
+              className="group relative block aspect-[16/11] w-full overflow-hidden rounded-xl border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#022b5c] hover:shadow-xl"
             >
+              {/* Background Image */}
               <Image
-                src={image}
-                alt={imageAlt}
+                src={service.image}
+                alt={service.imageAlt}
                 fill
-                sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                sizes="(min-width: 1024px) 380px, (min-width: 640px) 50vw, 100vw"
                 loading="lazy"
-                className="-z-20 object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
-              {/* Base dark gradient - always visible */}
-              <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
-              {/* Hover overlay - fades in smoothly */}
-              <div className="absolute inset-0 -z-10 bg-black/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-              <div className="absolute inset-x-0 top-0 flex items-center justify-between p-5 sm:p-6">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-black/15 text-white backdrop-blur-sm">
-                  <Icon size={18} strokeWidth={1.6} aria-hidden="true" />
-                </span>
-              </div>
+              {/* Natural Dark Gradient for High-Contrast Text Legibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/30 to-transparent transition-opacity duration-300 group-hover:from-slate-950/90" />
 
-              <div className="absolute inset-x-0 bottom-0 p-5 text-left text-white sm:p-6">
-                <h3 className="text-2xl font-semibold tracking-[-0.035em]">{title}</h3>
-                <p className="mt-2 max-h-24 max-w-sm overflow-hidden text-sm leading-6 text-white/85 transition-all duration-300 ease-out md:mt-0 md:max-h-0 md:translate-y-3 md:opacity-0 md:group-hover:mt-2 md:group-hover:max-h-24 md:group-hover:translate-y-0 md:group-hover:opacity-100 md:group-focus-within:mt-2 md:group-focus-within:max-h-24 md:group-focus-within:translate-y-0 md:group-focus-within:opacity-100">
-                  {description}
-                </p>
-                <div className="mt-3 h-px w-9 bg-[#c2410c] transition-all duration-300 group-hover:w-14" />
+              {/* Top Index Tag */}
+              <span className="absolute top-3.5 left-3.5 rounded-md bg-white/90 backdrop-blur-md px-2.5 py-1 text-xs font-bold text-slate-900">
+                0{index + 1}
+              </span>
+
+              {/* Bottom Overlay: Heading with Arrow Link */}
+              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 flex items-end justify-between gap-3 text-white">
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-300">
+                    Service
+                  </span>
+                  <h3 className="mt-1 text-xl font-bold tracking-tight text-white transition-colors group-hover:text-slate-100 sm:text-2xl">
+                    {service.title}
+                  </h3>
+                </div>
+
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md transition-all duration-300 group-hover:bg-white group-hover:text-[#022b5c] group-hover:scale-110">
+                  <ArrowUpRight size={20} />
+                </div>
               </div>
-            </Link>;
-          })}
+            </Link>
+          ))}
         </div>
       </div>
     </section>

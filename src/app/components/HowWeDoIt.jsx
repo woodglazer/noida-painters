@@ -1,49 +1,68 @@
-const steps = [
-  {
-    number: "01",
-    title: "Tell Us About Your Project",
-    description:
-      "Share the property type, areas to paint, surface concerns, and the finish you have in mind.",
-  },
-  {
-    number: "02",
-    title: "Site Visit & Planning",
-    description:
-      "We review the space and surface condition, then discuss suitable colours, finishes, and preparation.",
-  },
-  {
-    number: "03",
-    title: "Review the Quote",
-    description:
-      "Go through the proposed scope and quote before deciding how you would like to proceed.",
-  },
-  {
-    number: "04",
-    title: "Painting & Handover",
-    description:
-      "The team completes the agreed preparation and painting work, with project coordination on site.",
-  },
-];
-
 export default function HowWeDoIt() {
+  const steps = [
+    {
+      num: "1",
+      title: "Contact & Consultation",
+      desc: "Call us or submit the form with your property details and painting requirements.",
+    },
+    {
+      num: "2",
+      title: "Free Site Inspection",
+      desc: "Our painting supervisor visits your property to measure walls and inspect moisture or cracks.",
+    },
+    {
+      num: "3",
+      title: "Detailed Quotation",
+      desc: "You get a clear itemized estimate with material specs, timeline, and exact pricing.",
+    },
+    {
+      num: "4",
+      title: "Painting & Handover",
+      desc: "Our painters complete masking, sanding, and coating, followed by deep site cleaning.",
+    },
+  ];
+
   return (
-    <section id="process" className="bg-[#ffff] px-5 py-8 sm:px-8 sm:py-12 lg:px-12 lg:py-16" aria-label="Our painting process">
-      <ol className="mx-auto grid max-w-6xl grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-0">
-        {steps.map(({ number, title, description }) => (
-          <li key={number} className="flex flex-col items-center text-center">
-            <div className="relative mb-6 flex h-[180px] w-[180px] items-center justify-center rounded-full bg-[linear-gradient(115deg,#f2e8df_0%,#e4ad91_58%,#c2410c_100%)] p-[30px]">
-              <span className="absolute left-0 top-1/2 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#f9f9f7] bg-[#c2410c]" />
-              <span className="absolute right-0 top-1/2 h-3.5 w-3.5 translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-[#f9f9f7] bg-[#c2410c]" />
-              <span className="flex h-full w-full flex-col items-center justify-center rounded-full bg-[#f9f9f7] text-[#29251f]">
-                <span className="text-4xl font-bold leading-none">{number}</span>
-                <span className="mt-1 text-sm font-medium uppercase leading-none tracking-wide">Step</span>
-              </span>
+    <section className="bg-[#f4f2ee] py-14 sm:py-18 lg:py-20 border-b border-stone-300/80">
+      <div className="mx-auto max-w-8xl px-5 sm:px-8 lg:px-12">
+        {/* Section Header - Centered matching upper sections */}
+        <div className="mx-auto mb-12 max-w-3xl text-center sm:mb-14">
+          <p className="mb-3 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#022b5c]">
+            <span className="h-px w-8 bg-[#022b5c]" />
+            Workflow
+            <span className="h-px w-8 bg-[#022b5c]" />
+          </p>
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            How It Works
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
+            From the initial consultation to final inspection and clean handover, our process ensures a smooth and reliable painting experience.
+          </p>
+        </div>
+
+        {/* Real contractor numbered list layout */}
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((step) => (
+            <div key={step.num} className="relative flex flex-col">
+              {/* Clean solid number */}
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded bg-[#022b5c] text-sm font-bold text-white">
+                  {step.num}
+                </span>
+                <span className="h-px flex-1 bg-slate-200" />
+              </div>
+
+              {/* Title & Desc */}
+              <h3 className="mt-4 text-lg font-bold text-slate-900">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                {step.desc}
+              </p>
             </div>
-            <h3 className="text-xl font-bold leading-tight text-[#c2410c] sm:text-2xl">{title}</h3>
-            <p className="mt-3 max-w-sm text-base leading-6 text-[#69645b]">{description}</p>
-          </li>
-        ))}
-      </ol>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }) {
   const siteUrl = getSiteUrl();
   const canonical = siteUrl ? `${siteUrl}/areas/${area.slug}` : undefined;
   return createSeoMetadata({
-    title: `Painters in ${area.name} | Gurgaon Painters`,
+    title: `${area.seoKeyword || `Painting Services in ${area.name}`} | Noida Painters`,
     description: area.description,
     ...(canonical ? { alternates: { canonical } } : {}),
     openGraph: {
@@ -37,8 +37,8 @@ export default async function AreaPage({ params }) {
   return (
     <main className="relative min-h-screen bg-[#f6f6f4]">
       <Navbar />
-      <article className="px-5 pb-14 pt-28 sm:px-8 sm:pb-20 sm:pt-32 lg:px-12">
-        <div className="mx-auto max-w-6xl">
+      <article className="pb-14 pt-28 sm:pb-20 sm:pt-32">
+        <div className="mx-auto max-w-8xl px-5 sm:px-8 lg:px-12">
           <Breadcrumbs
             inline
             items={[
@@ -48,11 +48,11 @@ export default async function AreaPage({ params }) {
             ]}
           />
           <header className="mt-8 max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#c2410c]">
-              Gurgaon &amp; Gurugram
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#022b5c]">
+              Noida &amp; Greater Noida
             </p>
-            <h1 className="mt-4 text-4xl font-medium leading-tight tracking-[-0.045em] text-[#29251f] sm:text-5xl">
-              Painters in {area.name}, Gurgaon
+            <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+              {area.seoKeyword || `Painting Services in ${area.name}`}
             </h1>
             <p className="mt-5 text-lg leading-8 text-[#69645b]">
               {area.intro}
@@ -104,13 +104,13 @@ export default async function AreaPage({ params }) {
             <div className="mt-5 flex flex-wrap gap-3">
               <Link
                 href="/services"
-                className="inline-flex min-h-11 items-center rounded-full border border-[#c2410c] px-5 text-sm font-semibold text-[#c2410c] hover:bg-[#c2410c] hover:text-white"
+                className="inline-flex min-h-11 items-center rounded-full border border-[#022b5c] px-5 text-sm font-semibold text-[#022b5c] hover:bg-[#022b5c] hover:text-white"
               >
                 Browse all services
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex min-h-11 items-center rounded-full bg-[#c2410c] px-5 text-sm font-semibold text-white hover:bg-[#9a3412]"
+                className="inline-flex min-h-11 items-center rounded-full bg-[#022b5c] px-5 text-sm font-semibold text-white hover:bg-[#011d3f]"
               >
                 Ask about {area.name}
               </Link>

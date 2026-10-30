@@ -1,9 +1,9 @@
 export const BUSINESS_PHONE = "+91 97172 56514";
 export const BUSINESS_PHONE_HREF = "tel:+919717256514";
-export const BUSINESS_EMAIL = "paintersgurgaon@gmail.com";
+export const BUSINESS_EMAIL = "noidapainters@gmail.com";
 
 // Display address shown on UI
-export const DISPLAY_ADDRESS = "Gurgaon (Gurugram), Haryana, India";
+export const DISPLAY_ADDRESS = "Noida (Gautam Buddha Nagar), Uttar Pradesh, India";
 
 // Schema / Registered address
 export const BUSINESS_ADDRESS_DETAILS = {

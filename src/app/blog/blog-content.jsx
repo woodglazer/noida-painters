@@ -22,7 +22,7 @@ function renderDeltaText(text, attributes = {}, key) {
       <a
         href={link}
         key={`${key}-link`}
-        className="text-[#c2410c] underline underline-offset-2"
+        className="text-[#022b5c] underline underline-offset-2"
         rel={link.startsWith("http") ? "noopener noreferrer" : undefined}
         target={link.startsWith("http") ? "_blank" : undefined}
       >
@@ -136,7 +136,7 @@ function renderRichText(delta, className) {
       blocks.push(
         <blockquote
           key={`quote-${index}`}
-          className="border-l-2 border-[#c2410c] pl-4 italic text-[#69645b]"
+          className="border-l-2 border-[#022b5c] pl-4 italic text-[#69645b]"
         >
           {line.content.length ? line.content : <br />}
         </blockquote>,
@@ -231,7 +231,7 @@ export default function BlogContent({ content, className = "" }) {
       blocks.push(
         <blockquote
           key={`quote-${index}`}
-          className="border-l-2 border-[#c2410c] pl-4 italic text-[#69645b]"
+          className="border-l-2 border-[#022b5c] pl-4 italic text-[#69645b]"
         >
           {renderInline(line.slice(2), `quote-${index}`)}
         </blockquote>,

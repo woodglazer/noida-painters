@@ -1,12 +1,12 @@
 export default function WhatsAppButton() {
-  const message = encodeURIComponent("Hello Gurgaon Painters, I would like to discuss a painting project.");
+  const message = encodeURIComponent("Hello Noida Painters, I would like to discuss a painting project.");
 
   return (
     <a
       href={`https://wa.me/919717256514?text=${message}`}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with Gurgaon Painters by Home Glazer on WhatsApp"
+      aria-label="Chat with Noida Painters by Home Glazer on WhatsApp"
       title="Chat on WhatsApp"
       className="fixed bottom-5 right-5 z-50 hidden h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#128C7E] sm:flex sm:bottom-6 sm:right-6"
     >

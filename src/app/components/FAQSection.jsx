@@ -6,8 +6,9 @@ export default function FAQSection() {
     <PageFAQs
       faqs={homeFaqs}
       title="Common questions"
-      intro="Answers about painting quotes, preparation, services, and timelines in Gurgaon."
+      intro="Answers about painting quotes, preparation, services, and timelines in Noida."
       id="faqs"
+      className="bg-[#f4f2ee]"
     />
   );
 }
