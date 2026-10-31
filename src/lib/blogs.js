@@ -1,4 +1,5 @@
 import "server-only";
+import { revalidateTag, unstable_cacheTag as cacheTag } from "next/cache";
 import { getDatabaseClient } from "@/lib/db";
 
 const fallbackArticles = [
@@ -64,6 +65,7 @@ function toArticle(row) {
 
 export async function getPublishedBlogPosts() {
   "use cache";
+  cacheTag("blog_posts", "blog_posts_noida");
   try {
     const sql = getDatabaseClient();
     const rows = await sql`
