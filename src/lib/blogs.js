@@ -122,7 +122,7 @@ export async function getPublishedBlogPosts() {
       SELECT id, slug, category, title, seo_title, description, body, checks,
         image, image_alt, published, created_at, updated_at
       FROM blog_posts
-      WHERE published = true
+      WHERE published = true AND (LOWER(COALESCE(city, 'noida')) = 'noida' OR LOWER(COALESCE(city, 'noida')) = 'all')
       ORDER BY created_at DESC
     `;
 
