@@ -25,28 +25,6 @@ const fallbackArticles = [
     createdAt: "2026-10-26T06:45:17.928Z",
     updatedAt: "2026-10-26T06:45:17.928Z",
   },
-  {
-    id: "fallback-exterior-repainting",
-    slug: "exterior-house-repainting-checklist-noida",
-    category: "Exterior painting",
-    title: "What to check before repainting your home's exterior",
-    seoTitle: "Exterior Repainting Checklist for Noida | Noida Painters",
-    description:
-      "Inspect the existing coating and resolve surface or moisture problems before selecting an exterior paint system.",
-    body: `A good exterior repaint starts with an inspection, not just a new colour.`,
-    paragraphs: [
-      "A good exterior repaint starts with an inspection, not just a new colour.",
-    ],
-    checks: [
-      "Decide on scope of work.",
-    ],
-    image: "/images/service-exterior.webp",
-    imageAlt: "Freshly painted house exterior",
-    published: true,
-    city: "noida",
-    createdAt: "2026-10-26T06:45:17.928Z",
-    updatedAt: "2026-10-26T06:45:17.928Z",
-  },
 ];
 
 function toArticle(row) {
@@ -80,7 +58,7 @@ export async function getPublishedBlogPosts() {
       SELECT id, slug, category, title, seo_title, description, body, checks,
         image, image_alt, published, city, created_at, updated_at
       FROM blog_posts
-      WHERE published = true AND (LOWER(COALESCE(city, 'noida')) = 'noida' OR LOWER(COALESCE(city, 'noida')) = 'all')
+      WHERE published = true AND LOWER(COALESCE(city, 'noida')) = 'noida'
       ORDER BY created_at DESC
     `;
 
@@ -97,7 +75,9 @@ export async function getPublishedBlogPost(slug) {
       SELECT id, slug, category, title, seo_title, description, body, checks,
         image, image_alt, published, city, created_at, updated_at
       FROM blog_posts
-      WHERE slug = ${slug} AND published = true
+      WHERE slug = ${slug} 
+        AND published = true
+        AND LOWER(COALESCE(city, 'noida')) = 'noida'
       LIMIT 1
     `;
 
