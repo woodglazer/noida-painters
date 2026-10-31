@@ -1,37 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getPublishedBlogPosts } from "@/lib/blogs";
 
-const articles = [
-  {
-    slug: "choose-paint-finish-for-each-room",
-    category: "Planning",
-    title: "How to choose the right paint finish for each room",
-    description:
-      "Match matte, satin, and durable finishes to how each space is used.",
-    image: "/images/service-interior.webp",
-    imageAlt: "Freshly painted home interior",
-  },
-  {
-    slug: "exterior-house-repainting-checklist-noida",
-    category: "Exterior painting",
-    title: "What to check before repainting your home's exterior",
-    description:
-      "Consider surface preparation, weather exposure, and repairs before painting.",
-    image: "/images/service-exterior.webp",
-    imageAlt: "Exterior painting work on a modern home",
-  },
-  {
-    slug: "early-signs-wall-waterproofing-noida",
-    category: "Waterproofing",
-    title: "Early signs that a wall may need waterproofing",
-    description:
-      "Learn what peeling paint, damp patches, and recurring stains may indicate.",
-    image: "/images/service-waterproofing.webp",
-    imageAlt: "Waterproof coating being applied to a terrace",
-  },
-];
+export default async function BlogSection() {
+  const publishedArticles = await getPublishedBlogPosts();
+  const articles = (publishedArticles || []).slice(0, 3);
 
-export default function BlogSection() {
+  if (articles.length === 0) {
+    return null;
+  }
+
   return (
     <section
       id="blog"
@@ -48,52 +26,58 @@ export default function BlogSection() {
           <h2 id="blog-heading" className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
             Expert Advice &amp; Tips
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate-600 sm:text-base">
-            Helpful insights on choosing finishes, planning surface waterproofing, and maintaining wall health.
+          <p className="mt-3 text-base text-slate-600 sm:text-lg">
+            Practical painting guides to help you make informed decisions for your home.
           </p>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {articles.map((article) => (
-            <Link
+            <article
               key={article.slug}
-              href={`/blog/${article.slug}`}
-              className="group overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#022b5c]/40 hover:shadow-lg transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#022b5c]"
+              className="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white transition hover:border-[#022b5c]/40 hover:shadow-md"
             >
-              <div className="relative aspect-[16/8] overflow-hidden">
+              <div className="relative aspect-16/10 overflow-hidden bg-slate-100">
                 <Image
                   src={article.image}
                   alt={article.imageAlt}
                   fill
-                  sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                  loading="lazy"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                  className="object-cover transition duration-300 group-hover:scale-105"
                 />
               </div>
-              <div className="p-4 text-left sm:p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#022b5c]">
+
+              <div className="flex flex-1 flex-col p-6">
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#022b5c]">
                   {article.category}
-                </p>
-                <h3 className="mt-2 line-clamp-2 text-lg font-semibold leading-snug text-[#29251f] sm:text-xl">
-                  {article.title}
+                </span>
+                <h3 className="mt-2 text-xl font-bold text-slate-900 transition group-hover:text-[#022b5c]">
+                  <Link href={`/blog/${article.slug}`}>
+                    {article.title}
+                  </Link>
                 </h3>
-                <p className="mt-2 line-clamp-2 text-sm leading-5 text-[#69645b]">
+                <p className="mt-2.5 line-clamp-3 text-sm text-slate-600">
                   {article.description}
                 </p>
-                <span className="mt-3 inline-flex text-sm font-semibold text-[#022b5c]">
-                  Read article <span aria-hidden="true" className="ml-2">→</span>
-                </span>
+                <div className="mt-5 pt-4 border-t border-slate-100">
+                  <Link
+                    href={`/blog/${article.slug}`}
+                    className="inline-flex items-center text-sm font-semibold text-[#022b5c] transition hover:text-[#011b3d]"
+                  >
+                    Read Guide →
+                  </Link>
+                </div>
               </div>
-            </Link>
+            </article>
           ))}
         </div>
 
-        <div className="mt-8 text-center">
+        <div className="mt-10 text-center">
           <Link
             href="/blog"
-            className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#022b5c] px-6 text-sm font-bold text-[#022b5c] transition-colors hover:bg-[#022b5c] hover:text-white"
+            className="inline-flex items-center justify-center rounded-lg border-2 border-[#022b5c] px-6 py-3 text-sm font-bold text-[#022b5c] transition hover:bg-[#022b5c] hover:text-white"
           >
-            View all articles
+            View All Painting Guides
           </Link>
         </div>
       </div>
