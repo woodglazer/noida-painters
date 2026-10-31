@@ -51,6 +51,9 @@ export const metadata = {
   metadataBase: new URL(siteUrl || "https://www.noidapainters.com"),
   title: { default: rootSeo.title.absolute, template: "%s" },
   applicationName: BRAND_NAME,
+  verification: {
+    google: "l8K8OZYKRVl6tK2VV_Tf98A1209Da-t1kfGmYXOMRzo",
+  },
 };
 
 export default function RootLayout({ children }) {
